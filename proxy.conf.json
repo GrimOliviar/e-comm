@@ -1,0 +1,11 @@
+{
+    "/api": {
+      "target": "http://makeup-api.herokuapp.com",
+      "secure": false,
+      "pathRewrite": {
+        "^/api": ""
+      },
+      "changeOrigin": true
+    }
+  }
+  

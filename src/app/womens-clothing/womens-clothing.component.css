@@ -1,0 +1,24 @@
+.card {
+    transition: transform 0.3s; 
+  }
+  
+  .card:hover {
+    transform: scale(1.05); 
+  }
+  .container{
+    margin-top: 100px;
+  }
+.pagination button {
+  background-color: black;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  margin: 2px;
+  cursor: pointer;
+  margin-left: 7%;
+}
+
+.pagination button:hover {
+  background-color: lightgray;
+  color: black;
+}

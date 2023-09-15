@@ -1,0 +1,12 @@
+<div>
+    <h2>User Profile</h2>
+    <ng-container *ngIf="user; else notSignedIn">
+      <p>Welcome, {{ user?.displayName }}</p>
+      <button (click)="signOut()">Sign Out</button>
+    </ng-container>
+    <ng-template #notSignedIn>
+      <p>You are not signed in.</p>
+    </ng-template>
+  </div>
+  
+  

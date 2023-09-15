@@ -1,0 +1,46 @@
+<section id="product">
+
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        <div class="productHeading text-center">
+          <h2 class="mb-3">Maybelline Products</h2>
+        </div>
+      </div>
+    </div>
+    <div class="filters">
+      <input type="number" class="minprice" placeholder="Min Price" [(ngModel)]="minPrice" />
+      <input type="number" class="maxprice" placeholder="Max Price" [(ngModel)]="maxPrice" />
+      <button class="btn" (click)="filterProducts()">Filter</button>
+    </div>
+    <div class="row mt-3">
+      <div class="col-lg-3 pt-1" *ngFor="let product of productList">
+        <div class="box-shadow">
+          <div class="card">
+            <img class="img-fluid" style="height: 200px;" [src]="product.image_link" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">{{ product.name }}</h5>
+              <p class="card-text"><span class="text-danger fw-semibold me-2">${{ product.price }}</span></p>
+              <div class="row">
+                <div class="col-6">
+                  <i class="fa-solid fa-star-half-stroke m-0" style="color: #f1f50f;"></i>
+                  <span class="text-muted">({{ product.rating }})</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="pagination">
+    <button
+      *ngFor="let page of getPages()"
+      [class.active]="page === currentPage"
+      (click)="changePage(page)"
+    >
+      {{ page }}
+    </button>
+  </div>
+</section>
